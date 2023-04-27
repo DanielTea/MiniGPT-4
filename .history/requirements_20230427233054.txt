@@ -1,0 +1,10 @@
+salesforce-lavis
+bitsandbytes
+accelerate
+gradio==3.27.0
+numpy==1.21.2
+torch==1.10.0
+torchvision==0.11.1
+h5py
+typing-extensions
+wheel

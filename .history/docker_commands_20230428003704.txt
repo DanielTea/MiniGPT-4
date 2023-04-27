@@ -1,0 +1,9 @@
+minigpt4-docker-image
+
+docker tag minigpt4-docker-image gcr.io/stately-minutia-223810/minigpt4-docker-image
+
+docker push gcr.io/stately-minutia-223810/minigpt4-docker-image
+
+gcloud run deploy minigpt4-service --image gcr.io/stately-minutia-223810/minigpt4-docker-image --platform managed --region your-region --allow-unauthenticated
+
+gcloud run deploy minigpt4-service --image gcr.io/stately-minutia-223810/minigpt4-docker-image --platform managed --allow-unauthenticated --project 

@@ -1,0 +1,5 @@
+minigpt4-docker-image
+
+docker tag minigpt4-docker-image gcr.io/your-project-id/minigpt4-docker-image
+
+docker push gcr.io/your-project-id/minigpt4-docker-image
