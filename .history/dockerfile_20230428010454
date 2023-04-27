@@ -16,11 +16,10 @@ RUN git clone https://github.com/DanielTea/MiniGPT-4.git && \
     cd MiniGPT-4 && \
     ls
 
-WORKDIR /MiniGPT-4
+WORKDIR /
 
 # Download the pretrained model file (replace with the correct URL)
-RUN wget https://huggingface.co/wangrongsheng/MiniGPT4-7B/resolve/main/prerained_minigpt4_7b.pth && \ 
-    ls
+RUN wget https://huggingface.co/wangrongsheng/MiniGPT4-7B/resolve/main/prerained_minigpt4_7b.pth
 
 # Copy the requirements file into the container at /app
 # COPY requirements.txt
