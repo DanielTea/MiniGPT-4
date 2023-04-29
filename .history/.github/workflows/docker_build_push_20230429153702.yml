@@ -30,14 +30,15 @@ jobs:
 #         push: true
 #         tags: gcr.io/stately-minutia-223810/minigpt4-docker-image:latest
 
+    # - name: Authenticate to Google Cloud
+    #   run: |
+    #     echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}" | base64 --decode > sa_key.json
+    #     gcloud auth activate-service-account --key-file=sa_key.json
+
     # actions/checkout MUST come before auth
     - uses: 'actions/checkout@v3'
 
-    - id: 'auth'
-      name: 'Authenticate to Google Cloud'
-      uses: `google-github-actions/auth@v0.4.0'
-      with:
-        credentials_json: '${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}'
+    
 
     - name: Deploy to Cloud Run
       uses: google-github-actions/deploy-cloudrun@main
@@ -46,6 +47,6 @@ jobs:
         service: minigpt4-service
         region: europe-west1
         image: gcr.io/stately-minutia-223810/minigpt4-docker-image
-        # username: _json_key
-        # credentials: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}
+        username: _json_key
+        credentials: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}
         allow_unauthenticated: true

@@ -46,6 +46,6 @@ jobs:
         service: minigpt4-service
         region: europe-west1
         image: gcr.io/stately-minutia-223810/minigpt4-docker-image
-        # username: _json_key
-        # credentials: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}
+        username: _json_key
+        credentials: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}
         allow_unauthenticated: true
